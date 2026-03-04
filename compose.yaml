@@ -1,0 +1,3 @@
+include:
+  - oci://dockersamples/labspace-content-dev:dev
+  - ./compose.override.yaml

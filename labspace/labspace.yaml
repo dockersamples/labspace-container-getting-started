@@ -1,0 +1,29 @@
+metadata:
+  id: container-getting-started
+  sourceRepo: github.com/dockersamples/labspace-container-getting-started
+  contentVersion: 1.0.0
+
+title: "Getting Started with Docker"
+description: "Learn Docker fundamentals by running containers, exploring the container lifecycle, and packaging a real Node.js app into your own custom image."
+
+sections:
+  - title: "Welcome to Docker"
+    contentPath: 01-welcome.md
+  - title: "Running Containers"
+    contentPath: 02-running-containers.md
+  - title: "Building Your First Image"
+    contentPath: 03-building-images.md
+  - title: "Running Your App"
+    contentPath: 04-running-your-app.md
+  - title: "Wrap-up"
+    contentPath: 05-wrap-up.md
+
+services:
+  - id: nginx
+    title: "nginx Demo"
+    url: http://localhost:8080
+    icon: language
+  - id: app
+    title: "Your App"
+    url: http://localhost:3000
+    icon: web

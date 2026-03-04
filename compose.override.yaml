@@ -1,0 +1,8 @@
+services:
+  configurator:
+    environment:
+      PROJECT_CLONE_URL: https://github.com/dockersamples/labspace-container-getting-started
+
+  workspace:
+    ports: !override
+      - 8085:8085
