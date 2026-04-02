@@ -1,5 +1,5 @@
 metadata:
-  id: container-getting-started
+  id: dockersamples/container-getting-started
   sourceRepo: github.com/dockersamples/labspace-container-getting-started
   contentVersion: 1.0.0
 
