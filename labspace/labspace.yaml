@@ -27,3 +27,6 @@ services:
     title: "Your App"
     url: http://localhost:3000
     icon: web
+
+variables:
+  nodeImageTag: 24-alpine

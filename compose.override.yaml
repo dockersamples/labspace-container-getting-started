@@ -4,5 +4,6 @@ services:
       PROJECT_CLONE_URL: https://github.com/dockersamples/labspace-container-getting-started
 
   workspace:
+    # Only expose port 8085 and not all of the other ports the workspace normally wants to expose
     ports: !override
       - 8085:8085

@@ -27,7 +27,7 @@ Here are the key instructions you'll use:
 
 ```mermaid
 graph TD
-    A["FROM node:20-alpine<br>(base layer)"] --> B
+    A["FROM node:$$nodeImageTag$$<br>(base layer)"] --> B
     B["WORKDIR /app<br>COPY package*.json ./<br>RUN npm install<br>(dependency layer)"] --> C
     C["COPY . .<br>(app code layer)"] --> D
     D["CMD node app.js<br>(metadata)"] --> E["📦 Your Image"]
@@ -39,7 +39,7 @@ Save the following `Dockerfile` into the project directory. Click the **Save fil
 
 ```dockerfile save-as=Dockerfile
 # Start from the official Node.js LTS image on Alpine Linux (small and fast)
-FROM node:22-alpine
+FROM node:$$nodeImageTag$$
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -82,7 +82,7 @@ Breaking it down:
 Watch the output as Docker steps through each instruction. You'll see layer IDs being generated.
 
 > [!NOTE]
-> The first build downloads the `node:22-alpine` base image from Docker Hub. Subsequent builds reuse cached layers — try running the build command a second time to see just how fast caching makes it.
+> The first build downloads the `node:$$nodeImageTag$$` base image from Docker Hub. Subsequent builds reuse cached layers — try running the build command a second time to see just how fast caching makes it.
 
 ## Inspect Your New Image
 
@@ -95,6 +95,8 @@ docker images getting-started
 You'll see the image name, tag (`latest` by default), image ID, when it was created, and its size.
 
 > [!NOTE]
-> Alpine Linux is a tiny Linux distribution (~5 MB). Using `node:22-alpine` instead of `node:22` keeps your image lean. Smaller images mean faster pulls, less storage, and a smaller attack surface.
+> Alpine Linux is a tiny Linux distribution (~5 MB). Using the `node:$$nodeImageTag$$` image tag keeps your image lean. Smaller images mean faster pulls, less storage, and a smaller attack surface.
+>
+> Additionally, [the Docker Hardened Image catalog](https://dhi.io) provides the [`dhi.io/node` image](https://hub.docker.com/hardened-images/catalog/dhi/node), which is even smaller and more secure.
 
 Your image is built and ready to run. On to the next section!

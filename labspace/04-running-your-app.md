@@ -2,7 +2,7 @@
 
 The image is built. Now run it!
 
-## Launch Your Container
+## Launch your container
 
 ```bash
 docker run -d -p 3000:3000 --name my-app getting-started
@@ -15,7 +15,7 @@ You should see your containerized Node.js app in the browser. Notice the **Conta
 > [!TIP]
 > The hostname inside a container defaults to a short hash of the container ID. You can override it with `--hostname` if you want something more readable.
 
-## Containers are Isolated
+## Containers are isolated
 
 Because containers are isolated, you can run multiple instances of the same image side by side without conflict. Start a second container from the same image on a different host port:
 
@@ -31,7 +31,7 @@ Confirm both are running:
 docker ps
 ```
 
-## Viewing Logs
+## Viewing logs
 
 Check what your app has logged since it started:
 
@@ -45,7 +45,7 @@ Follow the logs in real time (press `Ctrl+C` to stop):
 docker logs -f my-app
 ```
 
-## Containers Don't See Your Host Files
+## Containers don't see your host files
 
 Make a small change: open :fileLink[app.js]{path="app.js"} and change the heading from `Hello from Docker!` to something else. Save the file, then refresh the browser tab.
 
@@ -66,7 +66,7 @@ docker run -d -p 3002:3000 --name my-app-v2 getting-started:v2
 > [!IMPORTANT]
 > This is a fundamental property of containers: **images are immutable**. You always create a new image to update your app, then replace the container. This makes deployments predictable and rollbacks straightforward.
 
-## Clean Up
+## Clean up
 
 Stop and remove all the containers you created in this section:
 
